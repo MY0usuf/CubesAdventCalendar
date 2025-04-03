@@ -129,7 +129,11 @@ main {
 	line-height: 0.8;
 	padding: 0 0 0.1em 0;
 }
-
+#header-countdown {
+    font-size: 1.2em; /* Adjust as needed */
+    margin-left: 20px; /* Space between title and countdown */
+    white-space: nowrap; /* Prevent wrapping */
+}
 .codrops-header__tagline {
 	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
 	padding: 0 0.5em 0 5vw;
@@ -283,7 +287,7 @@ main {
 /* push to the right weekday (we have to push 3 boxes) */
 
 .js .cube:first-child {
-	margin-left: calc(((7vw + 1vw) * 3) + 0.5vw);
+	margin-left: calc(((7vw + 1vw) * 5) + 0.5vw);
 }
 
 .js .cube:not(.cube--inactive) {
@@ -597,4 +601,9 @@ main {
 		margin: 0;
 		padding: 0.5em 1em;
 	}
+}
+#countdown {
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-align: center;
 }

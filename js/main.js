@@ -632,6 +632,8 @@
 		}
 		requestAnimationFrame(this._snow.bind(this));
 	};
+	
+
 
 	Snow.prototype._reset = function(flake) {
 		flake.x = Math.floor(Math.random() * this.width);
@@ -672,5 +674,6 @@
 	}
 
 	init();
+
 
 })(window);

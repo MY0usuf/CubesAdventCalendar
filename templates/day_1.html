@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advent Calendar - Day {{ day }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Advent Calendar - Day {{ day }}</h1>
+        <div class="advent-content">
+            <p>This is a special message or surprise for December {{ day }}.</p>
+            </div>
+        <p><a href="{{ url_for('countdown') }}">Back to Countdown</a> | <a href="{{ url_for('logout') }}">Logout</a></p>
+    </div>
+</body>
+</html>

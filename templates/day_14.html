@@ -1,0 +1,105 @@
+{% extends "day_template.html" %}
+{% block style %}
+<!-- Adding CSS animations -->
+<style>
+    @keyframes flashText {
+        0% { color: #d04865; }
+        50% { color: #ff65b2; }
+        100% { color: #d04865; }
+    }
+
+    .highlight-text {
+        animation: flashText 1s linear infinite;
+    }
+
+    /* Award animation */
+    .award-item {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+    }
+
+    .award-item:nth-child(odd) {
+        animation-delay: 0.3s;
+    }
+
+    .award-item:nth-child(even) {
+        animation-delay: 0.6s;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+{% endblock %}
+{% block title %}Day 14{% endblock %}
+{% block content %}
+<div class="advent-content" style="max-width: 850px; margin: 0 auto; padding: 3rem 2rem; color: #3a2f2f;">
+    
+    <!-- Confetti and flashing effects -->
+    <div id="confetti" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <!-- Flashing light effect for title -->
+    <h2 class="highlight-text" style="font-size: 2.5rem; color: #d04865; font-weight: bold; margin-bottom: 1.5rem; animation: flashText 1s linear infinite;">🎖️ Welcome to the Humeraa Awards Night 🎖️</h2>
+    
+    <p style="text-align: center; font-size: 1.2rem;">
+        Hosted by the hopelessly smitten <strong>Sufii</strong>... for the most enchanting, stunning, and award-winning woman I know.
+    </p>
+    <div id="award-container" style="margin-top: 3rem;">
+        <ul id="awards-list" style="margin-top: 2.5rem; padding: 0; list-style: none; line-height: 1.8;">
+            <li class="award-item">🏆 <strong>Best Smile That Could End Wars:</strong> Goes to... the one that makes me forget what I was saying mid-sentence 😵‍💫</li>
+            <li class="award-item">🏆 <strong>Most Dangerous Eyes:</strong> For making my heart skip a beat *and* look like a Disney princess villain at the same time 😏</li>
+            <li class="award-item">🏆 <strong>Best Dressed Without Trying:</strong> She could wear a potato sack and I’d still want her number. It's unfair tbh.</li>
+            <li class="award-item">🏆 <strong>Most Likely To Own My Entire Heart:</strong> Literally already happened. No nominees needed. Just humeraa.</li>
+            <li class="award-item">🏆 <strong>Flawless Drama Queen Performance:</strong> For managing to be dramatic, adorable, and right—all at once.</li>
+            <li class="award-item">🏆 <strong>Best Leading Role in My Daydreams:</strong> Catch her stealing scenes in my head every. single. day.</li>
+            <li class="award-item">🏆 <strong>Lifetime Achievement in Being Effortlessly Hot:</strong> Ma’am... it’s getting hard to focus here 🥵</li>
+            <li class="award-item">🏆 <strong>Best Kinda Love:</strong> The “makes-you-wanna-dance-in-a-kitchen-and-blush-at-2am” type. She invented it.</li>
+        </ul>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 1.1rem;">
+        humeraa, if loving you was a competition... I'd lose every time,  
+        because I'd get too distracted staring at you to even play 😚
+    </p>
+
+    <p style="margin-top: 2rem; text-align: center; font-style: italic;">
+        ✨ No red carpet needed when you're already the highlight of every room. ✨
+    </p>
+
+    <p style="text-align: right; margin-top: 3rem;">
+        With all my love,<br>
+        Your #1 fan and forever host,<br>
+        <strong>Sufii</strong> 🎤❤️
+    </p>
+
+</div>
+<!-- Confetti JS -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<script>
+    // Confetti effect triggered
+    window.onload = function() {
+        var duration = 5 * 1000;
+        var end = Date.now() + duration;
+        var colors = ['#ff7f7f', '#ffb2b2', '#ff66a3', '#ff6666'];
+
+        (function frame() {
+            confetti({
+                particleCount: 3,
+                angle: Math.random() * 360,
+                spread: Math.random() * 360,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random()
+                },
+                colors: colors
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    };
+</script>
+{% endblock %}

@@ -2,7 +2,7 @@
 .no-js .cube {
 	border: 0.75vw solid #fff;
 	outline: 1px solid #fff;
-	background: #f0f0f0 url(../images/mandala.png) no-repeat center center;
+	background: #edf486 url(../images/mandala.png) no-repeat center center;
 }
 
 .cube:not(.cube--inactive):nth-child(2n) .cube__side,
@@ -66,5 +66,5 @@
 	bottom: 30vh;
 	text-indent: -0.175em;
 	letter-spacing: -0.175em;
-	color: #fff;
+	color: #5e6221;
 }

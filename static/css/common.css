@@ -6,7 +6,7 @@
 
 body {
 	font-family: 'Playfair Display', serif;
-	color: #3f3f45;
+	color: #eff68a;
 	background: #f0f0f3;
 	transition: background-color 0.8s;
 	-webkit-font-smoothing: antialiased;
@@ -104,7 +104,6 @@ main {
 	flex: none;
 	width: 100%;
 	padding: 0.5em 1.25em 0.5em 0.75em;
-	background: #fff;
 }
 
 .codrops-header__main {
@@ -399,7 +398,7 @@ main {
 	content: attr(data-number);
 	display: inline-block;
 	margin-right: 0.5em;
-	color: white;
+	color: #5e6221;
 }
 
 
@@ -484,7 +483,10 @@ main {
 .content__meta::before {
 	content: '\2014';
 }
-
+.unlock-button {
+    /* ... other styles ... */
+    display: none; /* Hidden by default */
+}
 .content__number {
 	position: absolute;
 }

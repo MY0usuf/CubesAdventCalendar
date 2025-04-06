@@ -1,16 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Advent Calendar - Day {{ day }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Advent Calendar - Day {{ day }}</h1>
-        <div class="advent-content">
-            <p>This is a special message or surprise for December {{ day }}.</p>
-            </div>
-        <p><a href="{{ url_for('countdown') }}">Back to Countdown</a> | <a href="{{ url_for('logout') }}">Logout</a></p>
-    </div>
-</body>
-</html>
+{% extends "day_template.html" %}
+{% block title %}Day 1{% endblock %}
+{% block content %}
+<div class="advent-content" style="margin: 0 auto; border-radius: 1rem; padding: 2rem;">
+    
+    <h2 style="color: #e9a847; text-align: center;">Hey Humeraa, it’s your Special day💛</h2>
+    
+    <p style="color: #4f4f4f; line-height: 1.7; font-size: 1.1rem;">
+        This isn't just a birthday. It's your <strong>Special Day</strong>. And I couldn’t let it go by like any other.
+        <br><br>
+        Your birthday’s too big for just one day—so I’m stealing 23
+        <br><br>
+        So… I made this. A little space, just for you.  
+        Every day, I’ll be dropping a little piece of “us” right here, 
+        <br><br>
+        you’ll find a tiny surprise waiting here—something personal, something silly, something secretly sweet.
+        <br><br>
+        You once called me unromantic. I took that <em>very personally</em>.  
+        <br><br>
+        Let’s call this my soft revenge.  
+        <br><br>
+        No spoilers, but... you might laugh, cry, cringe, and melt in equal parts.
+        <br><br>
+        P.S. This is your safe space. And yes, only you get access.
+        <br><br>
+        P.P.S. You better show up tomorrow too.
+        <br><br>
+        Welcome to your Birthday Advent Calendar.  
+        <br><br>
+        Love, <br>
+        <strong>Yousuf</strong>
+    </p>
+</div>
+{% endblock %}
+

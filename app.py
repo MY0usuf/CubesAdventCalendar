@@ -30,30 +30,15 @@ def countdown():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
 
-    today = datetime.now()
-    advent_start = datetime(today.year, 12, 1)
-    if today < advent_start:
-        time_until_advent = advent_start - today
-        days = time_until_advent.days
-        hours, remainder = divmod(time_until_advent.seconds, 3600)
-        minutes, seconds = divmod(remainder, 60)
-        return render_template('countdown.html', days=days, hours=hours, minutes=minutes, seconds=seconds)
-    elif today.month == 12 and today.day <= 25:
-        return redirect(url_for(f'day_{today.day}'))
-    else:
-        return render_template('countdown.html', message="Advent Calendar is over for this year!")
+
+    return render_template('countdown.html')
 
 @app.route('/day_<int:day>')
 def advent_day(day):
     if not session.get('logged_in'):
         return redirect(url_for('login'))
 
-    today = datetime.now()
-    if today.month == 12 and 1 <= day <= 25 and today.day >= day:
-        # Here you'll render the content for the specific day
-        return render_template(f'day_{day}.html', day=day)
-    else:
-        return render_template('countdown.html', message="You'll have to wait for that day!")
+    return render_template(f'day_{day}.html', day=day)
 
 @app.route('/logout')
 def logout():

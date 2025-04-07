@@ -1,0 +1,96 @@
+{% extends "day_template.html" %}
+{% block title %}Day 9 - 9 Reasons Why I Love You{% endblock %}
+{% block content %}
+  <div class="advent-content" style="text-align: center; color:#757575;">
+    <h2>Hera’s Fun Quiz!</h2>
+    <p>Let’s see how well you know yourself, my love! Answer these questions about the things you love, and I’ll be cheering you on with every guess! 💕</p>
+    
+    <form id="quizForm">
+        <div class="question">
+            <h3>1. Which Coldplay song always makes Hera smile?</h3>
+            <input type="radio" id="q1a" name="q1" value="A" onclick="checkAnswer('q1', 'A')">
+            <label for="q1a">A) "Fix You"</label><br>
+            <input type="radio" id="q1b" name="q1" value="B" onclick="checkAnswer('q1', 'B')">
+            <label for="q1b">B) "Yellow"</label><br>
+            <input type="radio" id="q1c" name="q1" value="C" onclick="checkAnswer('q1', 'C')">
+            <label for="q1c">C) "Viva La Vida"</label><br>
+            <input type="radio" id="q1d" name="q1" value="D" onclick="checkAnswer('q1', 'D')">
+            <label for="q1d">D) "The Scientist"</label><br>
+            <p id="q1-feedback"></p>
+        </div>
+        
+        <div class="question">
+            <h3>2. Which Jungkook song do you always find yourself humming?</h3>
+            <input type="radio" id="q2a" name="q2" value="A" onclick="checkAnswer('q2', 'A')">
+            <label for="q2a">A) "Euphoria"</label><br>
+            <input type="radio" id="q2b" name="q2" value="B" onclick="checkAnswer('q2', 'B')">
+            <label for="q2b">B) "My Time"</label><br>
+            <input type="radio" id="q2c" name="q2" value="C" onclick="checkAnswer('q2', 'C')">
+            <label for="q2c">C) "Stay"</label><br>
+            <input type="radio" id="q2d" name="q2" value="D" onclick="checkAnswer('q2', 'D')">
+            <label for="q2d">D) "Begin"</label><br>
+            <p id="q2-feedback"></p>
+        </div>
+
+        <div class="question">
+            <h3>3. What’s Hera’s favorite dessert to enjoy with Nutella?</h3>
+            <input type="radio" id="q3a" name="q3" value="A" onclick="checkAnswer('q3', 'A')">
+            <label for="q3a">A) Nutella Kunafa</label><br>
+            <input type="radio" id="q3b" name="q3" value="B" onclick="checkAnswer('q3', 'B')">
+            <label for="q3b">B) Nutella Pizza</label><br>
+            <input type="radio" id="q3c" name="q3" value="C" onclick="checkAnswer('q3', 'C')">
+            <label for="q3c">C) Nutella Crepes</label><br>
+            <input type="radio" id="q3d" name="q3" value="D" onclick="checkAnswer('q3', 'D')">
+            <label for="q3d">D) Nutella Brownies</label><br>
+            <p id="q3-feedback"></p>
+        </div>
+
+        <div class="question">
+            <h3>4. What is Hera’s favorite flower?</h3>
+            <input type="radio" id="q4a" name="q4" value="A" onclick="checkAnswer('q4', 'A')">
+            <label for="q4a">A) Sunflower</label><br>
+            <input type="radio" id="q4b" name="q4" value="B" onclick="checkAnswer('q4', 'B')">
+            <label for="q4b">B) Rose</label><br>
+            <input type="radio" id="q4c" name="q4" value="C" onclick="checkAnswer('q4', 'C')">
+            <label for="q4c">C) Lily</label><br>
+            <input type="radio" id="q4d" name="q4" value="D" onclick="checkAnswer('q4', 'D')">
+            <label for="q4d">D) Tulip</label><br>
+            <p id="q4-feedback"></p>
+        </div>
+
+        <div class="question">
+            <h3>5. Which vacation destination does Hera dream about?</h3>
+            <input type="radio" id="q5a" name="q5" value="A" onclick="checkAnswer('q5', 'A')">
+            <label for="q5a">A) Maldives</label><br>
+            <input type="radio" id="q5b" name="q5" value="B" onclick="checkAnswer('q5', 'B')">
+            <label for="q5b">B) Paris</label><br>
+            <input type="radio" id="q5c" name="q5" value="C" onclick="checkAnswer('q5', 'C')">
+            <label for="q5c">C) Bali</label><br>
+            <input type="radio" id="q5d" name="q5" value="D" onclick="checkAnswer('q5', 'D')">
+            <label for="q5d">D) Tokyo</label><br>
+            <p id="q5-feedback"></p>
+        </div>
+    </form>
+    
+    <p><strong>Good luck, my love! I can’t wait to see how many you get right! 💖</strong></p>
+
+<script>
+function checkAnswer(question, answer) {
+    let feedbackElement = document.getElementById(question + '-feedback');
+    const correctAnswers = {
+        'q1': 'A',
+        'q2': 'A',
+        'q3': 'A',
+        'q4': 'A',
+        'q5': 'B'
+    };
+
+    if (correctAnswers[question] === answer) {
+        feedbackElement.innerHTML = "Correct! You're on fire, my love! 🔥";
+    } else {
+        feedbackElement.innerHTML = "Oops, not quite right, but you're getting closer!";
+    }
+}
+</script>
+  </div>
+{% endblock %}

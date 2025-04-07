@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'  # Important for session management
 
 # Replace with your girlfriend's actual username and a secure password
-USERS = {'her_username': 'her_secure_password'}
+USERS = {'humera': '12042002'}
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
